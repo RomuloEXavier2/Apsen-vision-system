@@ -1,0 +1,8 @@
+
+path: C:/Users/perfil/Downloads/Find small boxes.v2-continuous-improvement-2026-04-19.yolov11
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Medicamento  # O Roboflow geralmente exporta a partir do 0

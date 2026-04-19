@@ -1,0 +1,7 @@
+
+path: ../dataset  # Caminho relativo ao script de treino
+train: train/images
+val: val/images
+
+names:
+  0: Medicamento

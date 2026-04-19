@@ -1,0 +1,15 @@
+echo # Python > .gitignore
+echo __pycache__/ >> .gitignore
+echo *.py[cod] >> .gitignore
+echo venv/ >> .gitignore
+echo .env >> .gitignore
+echo # Modelos >> .gitignore
+echo *.pt >> .gitignore
+echo # Runs YOLO >> .gitignore
+echo runs/ >> .gitignore
+echo # Logs >> .gitignore
+echo logs/ >> .gitignore
+echo # Sistema >> .gitignore
+echo .DS_Store >> .gitignore
+echo Thumbs.db >> .gitignore
+echo .idea/ >> .gitignore

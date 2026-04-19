@@ -1,0 +1,1707 @@
+======================================================================
+  RELATÓRIO DE PROJETO — SCAN COMPLETO
+======================================================================
+  Projeto   : testes
+  Caminho   : C:\Users\perfil\PycharmProjects\PythonProject\NEXT2K26\COMPUTER_VISION\testes
+  Gerado em : 19/04/2026 13:56:51
+  Total de arquivos encontrados: 91
+======================================================================
+
+── TIPOS DE ARQUIVO ENCONTRADOS ──────────────────────────────────────
+  .jpg                 35 arquivo(s)
+  .txt                 18 arquivo(s)
+  .png                 14 arquivo(s)
+  .py                  9 arquivo(s)
+  .pt                  7 arquivo(s)
+  .yaml                4 arquivo(s)
+  .csv                 2 arquivo(s)
+  .md                  1 arquivo(s)
+  .log                 1 arquivo(s)
+
+── ESTRUTURA DE PASTAS E ARQUIVOS ────────────────────────────────────
+testes/
+├── mynd_vision_system  [pasta]
+│   ├── README.md
+│   ├── logs  [pasta]
+│   │   └── contagem_20260419.log
+│   ├── main.py
+│   ├── models  [pasta]
+│   ├── mynd_vision_system  [pasta]
+│   │   ├── coletar_dados.py
+│   │   ├── dataset  [pasta]
+│   │   │   ├── data.yaml
+│   │   │   ├── train  [pasta]
+│   │   │   │   ├── images  [pasta]
+│   │   │   │   │   ├── 59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.jpg
+│   │   │   │   │   ├── 658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.jpg
+│   │   │   │   │   ├── 6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.jpg
+│   │   │   │   │   ├── 7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.jpg
+│   │   │   │   │   ├── 7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.jpg
+│   │   │   │   │   ├── 7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.jpg
+│   │   │   │   │   ├── 8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.jpg
+│   │   │   │   │   ├── WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.jpg
+│   │   │   │   │   ├── a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.jpg
+│   │   │   │   │   ├── b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.jpg
+│   │   │   │   │   ├── d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.jpg
+│   │   │   │   │   └── ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.jpg
+│   │   │   │   └── labels  [pasta]
+│   │   │   │       ├── 59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.txt
+│   │   │   │       ├── 658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.txt
+│   │   │   │       ├── 6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.txt
+│   │   │   │       ├── 7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.txt
+│   │   │   │       ├── 7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.txt
+│   │   │   │       ├── 7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.txt
+│   │   │   │       ├── 8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.txt
+│   │   │   │       ├── WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.txt
+│   │   │   │       ├── a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.txt
+│   │   │   │       ├── b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.txt
+│   │   │   │       ├── d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.txt
+│   │   │   │       └── ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.txt
+│   │   │   └── val  [pasta]
+│   │   │       ├── images  [pasta]
+│   │   │       └── labels  [pasta]
+│   │   ├── dataset_local.yaml
+│   │   ├── download_model.py
+│   │   ├── logs  [pasta]
+│   │   ├── main.py
+│   │   ├── models  [pasta]
+│   │   │   └── best.pt
+│   │   ├── runs  [pasta]
+│   │   │   └── detect  [pasta]
+│   │   │       └── mynd_finance_v1  [pasta]
+│   │   │           ├── detector_caixas_real  [pasta]
+│   │   │           │   ├── BoxF1_curve.png
+│   │   │           │   ├── BoxPR_curve.png
+│   │   │           │   ├── BoxP_curve.png
+│   │   │           │   ├── BoxR_curve.png
+│   │   │           │   ├── args.yaml
+│   │   │           │   ├── confusion_matrix.png
+│   │   │           │   ├── confusion_matrix_normalized.png
+│   │   │           │   ├── labels.jpg
+│   │   │           │   ├── results.csv
+│   │   │           │   ├── results.png
+│   │   │           │   ├── train_batch0.jpg
+│   │   │           │   ├── train_batch1.jpg
+│   │   │           │   ├── train_batch2.jpg
+│   │   │           │   ├── train_batch90.jpg
+│   │   │           │   ├── train_batch91.jpg
+│   │   │           │   ├── train_batch92.jpg
+│   │   │           │   ├── val_batch0_labels.jpg
+│   │   │           │   ├── val_batch0_pred.jpg
+│   │   │           │   └── weights  [pasta]
+│   │   │           │       ├── best.pt
+│   │   │           │       └── last.pt
+│   │   │           └── detector_caixas_real-2  [pasta]
+│   │   │               ├── BoxF1_curve.png
+│   │   │               ├── BoxPR_curve.png
+│   │   │               ├── BoxP_curve.png
+│   │   │               ├── BoxR_curve.png
+│   │   │               ├── args.yaml
+│   │   │               ├── confusion_matrix.png
+│   │   │               ├── confusion_matrix_normalized.png
+│   │   │               ├── labels.jpg
+│   │   │               ├── results.csv
+│   │   │               ├── results.png
+│   │   │               ├── train_batch0.jpg
+│   │   │               ├── train_batch1.jpg
+│   │   │               ├── train_batch2.jpg
+│   │   │               ├── train_batch90.jpg
+│   │   │               ├── train_batch91.jpg
+│   │   │               ├── train_batch92.jpg
+│   │   │               ├── val_batch0_labels.jpg
+│   │   │               ├── val_batch0_pred.jpg
+│   │   │               └── weights  [pasta]
+│   │   │                   ├── best.pt
+│   │   │                   └── last.pt
+│   │   ├── treinar.py
+│   │   ├── treinar_local.py
+│   │   └── yolo11n.pt
+│   ├── project-update.py
+│   ├── requirements.txt
+│   ├── utils  [pasta]
+│   └── yolo11n-obb.pt
+├── scan-project.py
+└── setup_project.py
+
+── ÍNDICE COMPLETO DE ARQUIVOS ───────────────────────────────────────
+  [001] mynd_vision_system\README.md  (258 B)
+  [002] mynd_vision_system\logs\contagem_20260419.log  (2.0 KB)
+  [003] mynd_vision_system\main.py  (3.1 KB)
+  [004] mynd_vision_system\mynd_vision_system\coletar_dados.py  (617 B)
+  [005] mynd_vision_system\mynd_vision_system\dataset\data.yaml  (126 B)
+  [006] mynd_vision_system\mynd_vision_system\dataset\train\images\59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.jpg  (13.4 KB)
+  [007] mynd_vision_system\mynd_vision_system\dataset\train\images\658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.jpg  (13.3 KB)
+  [008] mynd_vision_system\mynd_vision_system\dataset\train\images\6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.jpg  (13.8 KB)
+  [009] mynd_vision_system\mynd_vision_system\dataset\train\images\7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.jpg  (13.2 KB)
+  [010] mynd_vision_system\mynd_vision_system\dataset\train\images\7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.jpg  (15.4 KB)
+  [011] mynd_vision_system\mynd_vision_system\dataset\train\images\7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.jpg  (13.9 KB)
+  [012] mynd_vision_system\mynd_vision_system\dataset\train\images\8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.jpg  (13.3 KB)
+  [013] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.jpg  (15.1 KB)
+  [014] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.jpg  (15.6 KB)
+  [015] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.jpg  (14.6 KB)
+  [016] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.jpg  (15.3 KB)
+  [017] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.jpg  (17.3 KB)
+  [018] mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.jpg  (19.7 KB)
+  [019] mynd_vision_system\mynd_vision_system\dataset\train\images\a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.jpg  (22.0 KB)
+  [020] mynd_vision_system\mynd_vision_system\dataset\train\images\b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.jpg  (12.7 KB)
+  [021] mynd_vision_system\mynd_vision_system\dataset\train\images\d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.jpg  (13.3 KB)
+  [022] mynd_vision_system\mynd_vision_system\dataset\train\images\ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.jpg  (12.4 KB)
+  [023] mynd_vision_system\mynd_vision_system\dataset\train\labels\59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.txt  (60 B)
+  [024] mynd_vision_system\mynd_vision_system\dataset\train\labels\658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.txt  (114 B)
+  [025] mynd_vision_system\mynd_vision_system\dataset\train\labels\6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.txt  (78 B)
+  [026] mynd_vision_system\mynd_vision_system\dataset\train\labels\7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.txt  (70 B)
+  [027] mynd_vision_system\mynd_vision_system\dataset\train\labels\7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.txt  (116 B)
+  [028] mynd_vision_system\mynd_vision_system\dataset\train\labels\7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.txt  (69 B)
+  [029] mynd_vision_system\mynd_vision_system\dataset\train\labels\8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.txt  (68 B)
+  [030] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.txt  (69 B)
+  [031] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.txt  (133 B)
+  [032] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.txt  (120 B)
+  [033] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.txt  (210 B)
+  [034] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.txt  (258 B)
+  [035] mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.txt  (201 B)
+  [036] mynd_vision_system\mynd_vision_system\dataset\train\labels\a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.txt  (59 B)
+  [037] mynd_vision_system\mynd_vision_system\dataset\train\labels\b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.txt  (60 B)
+  [038] mynd_vision_system\mynd_vision_system\dataset\train\labels\d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.txt  (49 B)
+  [039] mynd_vision_system\mynd_vision_system\dataset\train\labels\ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.txt  (67 B)
+  [040] mynd_vision_system\mynd_vision_system\dataset_local.yaml  (231 B)
+  [041] mynd_vision_system\mynd_vision_system\download_model.py  (616 B)
+  [042] mynd_vision_system\mynd_vision_system\main.py  (2.5 KB)
+  [043] mynd_vision_system\mynd_vision_system\models\best.pt  (5.2 MB)
+  [044] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxF1_curve.png  (106.0 KB)
+  [045] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxPR_curve.png  (69.3 KB)
+  [046] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxP_curve.png  (100.6 KB)
+  [047] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxR_curve.png  (89.6 KB)
+  [048] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\args.yaml  (1.8 KB)
+  [049] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\confusion_matrix.png  (90.6 KB)
+  [050] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\confusion_matrix_normalized.png  (92.4 KB)
+  [051] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\labels.jpg  (83.2 KB)
+  [052] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\results.csv  (12.1 KB)
+  [053] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\results.png  (303.1 KB)
+  [054] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch0.jpg  (296.2 KB)
+  [055] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch1.jpg  (308.6 KB)
+  [056] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch2.jpg  (309.8 KB)
+  [057] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch90.jpg  (261.1 KB)
+  [058] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch91.jpg  (274.4 KB)
+  [059] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch92.jpg  (283.9 KB)
+  [060] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\val_batch0_labels.jpg  (116.0 KB)
+  [061] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\val_batch0_pred.jpg  (119.9 KB)
+  [062] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\weights\best.pt  (5.2 MB)
+  [063] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\weights\last.pt  (5.2 MB)
+  [064] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxF1_curve.png  (101.9 KB)
+  [065] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxPR_curve.png  (69.3 KB)
+  [066] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxP_curve.png  (83.1 KB)
+  [067] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxR_curve.png  (93.9 KB)
+  [068] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\args.yaml  (1.8 KB)
+  [069] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\confusion_matrix.png  (97.7 KB)
+  [070] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\confusion_matrix_normalized.png  (98.6 KB)
+  [071] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\labels.jpg  (83.2 KB)
+  [072] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\results.csv  (12.0 KB)
+  [073] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\results.png  (292.6 KB)
+  [074] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch0.jpg  (296.2 KB)
+  [075] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch1.jpg  (308.6 KB)
+  [076] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch2.jpg  (309.8 KB)
+  [077] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch90.jpg  (261.1 KB)
+  [078] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch91.jpg  (274.4 KB)
+  [079] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch92.jpg  (283.9 KB)
+  [080] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\val_batch0_labels.jpg  (116.0 KB)
+  [081] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\val_batch0_pred.jpg  (115.1 KB)
+  [082] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\weights\best.pt  (5.2 MB)
+  [083] mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\weights\last.pt  (5.2 MB)
+  [084] mynd_vision_system\mynd_vision_system\treinar.py  (545 B)
+  [085] mynd_vision_system\mynd_vision_system\treinar_local.py  (823 B)
+  [086] mynd_vision_system\mynd_vision_system\yolo11n.pt  (5.4 MB)
+  [087] mynd_vision_system\project-update.py  (2.2 KB)
+  [088] mynd_vision_system\requirements.txt  (55 B)
+  [089] mynd_vision_system\yolo11n-obb.pt  (5.5 MB)
+  [090] scan-project.py  (8.1 KB)
+  [091] setup_project.py  (3.8 KB)
+
+══════════════════════════════════════════════════════════════════════
+  CONTEÚDO DOS ARQUIVOS
+══════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [001/91]: mynd_vision_system\README.md
+  Tamanho: 258 B  |  Linhas: 11
+──────────────────────────────────────────────────────────────────────
+# Mynd Vision System - Guia Rápido
+
+1. Instale as dependências:
+   pip install -r requirements.txt
+
+2. Execute o sistema:
+   python main.py
+
+3. Calibração:
+   Edite a variável `self.region_points` no `main.py` para alinhar com sua esteira/bancada.
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [002/91]: mynd_vision_system\logs\contagem_20260419.log
+  Tamanho: 2.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.log' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [003/91]: mynd_vision_system\main.py
+  Tamanho: 3.1 KB  |  Linhas: 90
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+import cv2
+import os
+import logging
+import numpy as np
+from datetime import datetime
+from ultralytics import solutions
+
+# Configuração de Logs
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+log_file = f"logs/contagem_{datetime.now().strftime('%Y%m%d')}.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[logging.FileHandler(log_file, encoding='utf-8'), logging.StreamHandler()]
+)
+
+
+class MyndVision:
+    def __init__(self, model_name="yolo11n-obb.pt", source=0):
+        self.source = source
+        self.model_path = model_name
+        self.region_points = [(100, 600), (1180, 600), (1180, 100), (100, 100)]
+
+        logging.info(f"Carregando modelo {model_name}...")
+
+        self.counter = solutions.ObjectCounter(
+            model=self.model_path,
+            region=self.region_points,
+            show=False,
+            line_width=2,
+            conf=0.4  # Reduzi um pouco para facilitar o teste inicial
+        )
+        self.cap = None
+
+    def executar(self):
+        self.cap = cv2.VideoCapture(self.source)
+        if not self.cap.isOpened():
+            logging.error("Falha ao abrir fonte de vídeo.")
+            return
+
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+
+        print("\n--- MONITORAMENTO MYND ATIVO: PRESSIONE 'Q' PARA PARAR ---")
+
+        try:
+            while self.cap.isOpened():
+                success, frame = self.cap.read()
+                if not success:
+                    break
+
+                # 1. Processa o frame
+                # Em algumas versões da SDK, o retorno de counter(frame) é None
+                # e a imagem fica em self.counter.im0
+                self.counter(frame)
+
+                # 2. Captura a imagem anotada gerada internamente
+                annotated_frame = getattr(self.counter, 'im0', frame)
+
+                # 3. Lógica de contagem robusta
+                c_in = getattr(self.counter, 'in_counts', getattr(self.counter, 'in_count', 0))
+                c_out = getattr(self.counter, 'out_counts', getattr(self.counter, 'out_count', 0))
+
+                print(f"\rLOGÍSTICA MYND -> Entrada: {c_in} | Saída: {c_out}", end="")
+
+                # 4. Verifica se a imagem é válida para o imshow
+                if annotated_frame is not None and isinstance(annotated_frame, np.ndarray):
+                    cv2.imshow("Mynd Vision System - Zero Divergencia", annotated_frame)
+                else:
+                    cv2.imshow("Mynd Vision System - Zero Divergencia", frame)
+
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+
+        except Exception as e:
+            logging.error(f"Erro durante a execução: {e}")
+        finally:
+            if self.cap:
+                self.cap.release()
+            cv2.destroyAllWindows()
+            logging.info("Sistema finalizado.")
+
+
+if __name__ == "__main__":
+    app = MyndVision(source=0)
+    app.executar()
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [004/91]: mynd_vision_system\mynd_vision_system\coletar_dados.py
+  Tamanho: 617 B  |  Linhas: 26
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+import cv2
+import os
+import uuid
+
+cap = cv2.VideoCapture(0)
+save_path = "dataset/train/images"
+os.makedirs(save_path, exist_ok=True)
+
+print("Posicione a caixa e aperte 'S' para salvar. 'Q' para sair.")
+
+while True:
+    ret, frame = cap.read()
+    cv2.imshow("Coleta de Dados Mynd", frame)
+
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('s'):
+        img_name = f"{save_path}/img_{uuid.uuid4().hex[:6]}.jpg"
+        cv2.imwrite(img_name, frame)
+        print(f"Foto salva: {img_name}")
+    elif key == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [005/91]: mynd_vision_system\mynd_vision_system\dataset\data.yaml
+  Tamanho: 126 B  |  Linhas: 8
+──────────────────────────────────────────────────────────────────────
+
+path: ../dataset  # Caminho relativo ao script de treino
+train: train/images
+val: val/images
+
+names:
+  0: Medicamento
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [006/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.jpg
+  Tamanho: 13.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [007/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.jpg
+  Tamanho: 13.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [008/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.jpg
+  Tamanho: 13.8 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [009/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.jpg
+  Tamanho: 13.2 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [010/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.jpg
+  Tamanho: 15.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [011/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.jpg
+  Tamanho: 13.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [012/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.jpg
+  Tamanho: 13.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [013/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.jpg
+  Tamanho: 15.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [014/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.jpg
+  Tamanho: 15.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [015/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.jpg
+  Tamanho: 14.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [016/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.jpg
+  Tamanho: 15.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [017/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.jpg
+  Tamanho: 17.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [018/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.jpg
+  Tamanho: 19.7 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [019/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.jpg
+  Tamanho: 22.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [020/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.jpg
+  Tamanho: 12.7 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [021/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.jpg
+  Tamanho: 13.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [022/91]: mynd_vision_system\mynd_vision_system\dataset\train\images\ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.jpg
+  Tamanho: 12.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [023/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\59fa05bf-9826-4675-9224-1cdbb26b807c_jpg.rf.01d2f8a9e666fb0821108b50576a4b3e.txt
+  Tamanho: 60 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.2942708333333333 0.38671875 0.2265625 0.7669270833333334
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [024/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\658e50ef-c521-4b76-9c97-b7737897248f_jpg.rf.7fc9121b6b4abb1ec481173a348ab4d3.txt
+  Tamanho: 114 B  |  Linhas: 2
+──────────────────────────────────────────────────────────────────────
+0 0.4700520833333333 0.5 0.9388020833333334 1
+0 0.2955729166666667 0.3841145833333333 0.2265625 0.7682291666666666
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [025/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\6b13fef3-13c5-45f0-a7f0-75154a7dfd0e_jpg.rf.100c1cd46be4d6606f0e0e94aaf265a3.txt
+  Tamanho: 78 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.8020833333333334 0.5169270833333334 0.24739583333333334 0.3033854166666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [026/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\7962ea41-6507-4a7f-8f52-37a808ede2e2_jpg.rf.1e1f8ade4a37a54289cb63e5294007dc.txt
+  Tamanho: 70 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.3059895833333333 0.38671875 0.22135416666666666 0.7721354166666666
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [027/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\7a76d69b-c743-4a5f-9e50-a02741eeb0dd_jpg.rf.d248dac5181481c3ca725b1ae9b37472.txt
+  Tamanho: 116 B  |  Linhas: 2
+──────────────────────────────────────────────────────────────────────
+0 0.296875 0.4973958333333333 0.3125 0.3046875
+0 0.5598958333333334 0.4895833333333333 0.23046875 0.2916666666666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [028/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\7eca90b5-affa-489f-a660-761c17bf9eec_jpg.rf.42f99c4d2c8acb536de4684a9996487d.txt
+  Tamanho: 69 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.36328125 0.4674479166666667 0.3020833333333333 0.2955729166666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [029/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\8fbb7ef0-9768-4549-b896-a0c5d3f18aa2_jpg.rf.5d9ad70f4e97ea8c51b80c0c1aa4a14c.txt
+  Tamanho: 68 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.2955729166666667 0.3841145833333333 0.2265625 0.7682291666666666
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [030/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-52-1-jpeg-95770-1776579005304-0_jpg.rf.ffd2005cf0ceba60c58eb6265032b866.txt
+  Tamanho: 69 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+1 0.18619791666666666 0.4596354166666667 0.2421875 0.2760416666666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [031/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-53-jpeg-88582-1776579005319-0_jpg.rf.98c49c038dd81a7c765a6ad848d32627.txt
+  Tamanho: 133 B  |  Linhas: 2
+──────────────────────────────────────────────────────────────────────
+1 0.18098958333333334 0.4466145833333333 0.24869791666666666 0.27734375
+1 0.51171875 0.4518229166666667 0.19921875 0.2526041666666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [032/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-1-jpeg-81327-1776579005335-0_jpg.rf.95a751aaae3ac32345e0c08c9931dc98.txt
+  Tamanho: 120 B  |  Linhas: 2
+──────────────────────────────────────────────────────────────────────
+1 0.23307291666666666 0.4921875 0.2734375 0.2734375
+1 0.484375 0.4674479166666667 0.23307291666666666 0.2552083333333333
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [033/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-2-jpeg-83726-1776579005351-0_jpg.rf.d0cf8e4c89fef74fab83c840279e9ad5.txt
+  Tamanho: 210 B  |  Linhas: 3
+──────────────────────────────────────────────────────────────────────
+1 0.6080729166666666 0.45703125 0.21354166666666666 0.27734375
+1 0.3997395833333333 0.4661458333333333 0.203125 0.24869791666666666
+1 0.18098958333333334 0.4869791666666667 0.2526041666666667 0.2682291666666667
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [034/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-54-4-jpeg-107243-1776579005367-0_jpg.rf.570d7714da1b60c5afd20d2b985e6575.txt
+  Tamanho: 258 B  |  Linhas: 4
+──────────────────────────────────────────────────────────────────────
+1 0.5755208333333334 0.421875 0.21354166666666666 0.28125
+1 0.140625 0.4557291666666667 0.2552083333333333 0.2721354166666667
+1 0.36328125 0.43359375 0.20442708333333334 0.2526041666666667
+1 0.8372395833333334 0.4192708333333333 0.3138020833333333 0.28515625
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [035/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\WhatsApp-Image-2026-04-17-at-16-36-55-1-jpeg-124736-1776579005383-0_jpg.rf.b38c952c52ea8c73d0ee88b0b24a3bc5.txt
+  Tamanho: 201 B  |  Linhas: 3
+──────────────────────────────────────────────────────────────────────
+1 0.4205729166666667 0.47265625 0.1328125 0.23567708333333334
+1 0.20833333333333334 0.4765625 0.3216145833333333 0.3072916666666667
+1 0.8424479166666666 0.4661458333333333 0.26953125 0.2630208333333333
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [036/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\a4d6397e-7213-43b4-80d1-48bb3ce1cd41_jpg.rf.177619fce04d26daabe421943f811272.txt
+  Tamanho: 59 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.2942708333333333 0.3828125 0.22916666666666666 0.765625
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [037/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\b5a5ac3d-63ca-437a-aa9c-eb8ff6b79d9f_jpg.rf.a715fe841d727f144f8a39c453e993bb.txt
+  Tamanho: 60 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.3307291666666667 0.3893229166666667 0.2109375 0.77734375
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [038/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\d7a59671-68ab-402e-9c9b-84584a0adfd2_jpg.rf.5fcbd01e3b90faf0015dacb65996f1aa.txt
+  Tamanho: 49 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.2955729166666667 0.3828125 0.2265625 0.765625
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [039/91]: mynd_vision_system\mynd_vision_system\dataset\train\labels\ec04b219-b9b0-43c5-9dea-d426239478e8_jpg.rf.de31d121100f152685917ed96e5bf698.txt
+  Tamanho: 67 B  |  Linhas: 1
+──────────────────────────────────────────────────────────────────────
+0 0.3385416666666667 0.3815104166666667 0.203125 0.7630208333333334
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [040/91]: mynd_vision_system\mynd_vision_system\dataset_local.yaml
+  Tamanho: 231 B  |  Linhas: 9
+──────────────────────────────────────────────────────────────────────
+
+path: C:/Users/perfil/Downloads/Find small boxes.v2-continuous-improvement-2026-04-19.yolov11
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Medicamento  # O Roboflow geralmente exporta a partir do 0
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [041/91]: mynd_vision_system\mynd_vision_system\download_model.py
+  Tamanho: 616 B  |  Linhas: 20
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+from roboflow import Roboflow
+import os
+
+def baixar_pesos():
+    # Substitua pela sua API Key (Settings -> API Keys no Roboflow)
+    rf = Roboflow(api_key="SUA_API_KEY_AQUI") 
+
+    project = rf.workspace("mynds-workspace").project("find-small-boxes-pyutr")
+    version = project.version(1) 
+
+    # Baixa no formato YOLOv11
+    dataset = version.download("yolov11")
+
+    print(f"\n[!] Download concluído!")
+    print(f"[!] Vá até a pasta '{dataset.location}/weights/' e mova o 'best.pt' para a pasta 'models/' do projeto.")
+
+if __name__ == "__main__":
+    baixar_pesos()
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [042/91]: mynd_vision_system\mynd_vision_system\main.py
+  Tamanho: 2.5 KB  |  Linhas: 69
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+import cv2
+import os
+import logging
+from ultralytics import solutions
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
+
+class MyndIndustrialEngine:
+    def __init__(self, model_name="best.pt"):
+        # Localização do seu modelo treinado no Roboflow
+        self.model_path = os.path.join("models", model_name)
+
+        if not os.path.exists(self.model_path):
+            logging.error(f"ERRO: O arquivo {self.model_path} não foi encontrado na pasta models!")
+            return
+
+        # ROI: Região de contagem (Ajustada para pegar a parte central da visão)
+        self.region_points = [(50, 650), (1230, 650), (1230, 100), (50, 100)]
+
+        logging.info(f"MOTOR MYND CARREGADO: {self.model_path}")
+
+        # Inicializando com ByteTracker Nativo (Alta Precisão)
+        self.counter = solutions.ObjectCounter(
+            model=self.model_path,
+            region=self.region_points,
+            show=False,
+            conf=0.6,   # Confiança alta para evitar contagens fantasmas
+            line_width=2
+        )
+
+    def rodar(self, source=0):
+        cap = cv2.VideoCapture(source)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+
+        print("\n[V1] SISTEMA DE VISÃO 'FIND SMALL BOXES' OPERACIONAL")
+
+        try:
+            while cap.isOpened():
+                success, frame = cap.read()
+                if not success: break
+
+                # Inferência Local (Sem dependência de API do Roboflow)
+                self.counter(frame)
+
+                # Renderização
+                annotated_frame = getattr(self.counter, 'im0', frame)
+                count = getattr(self.counter, 'in_counts', getattr(self.counter, 'in_count', 0))
+
+                # Feedback de Autoridade Mynd
+                cv2.putText(annotated_frame, f"MYND BOX COUNT: {count}", (50, 60), 
+                            cv2.FONT_HERSHEY_DUPLEX, 1.2, (0, 255, 0), 2)
+
+                cv2.imshow("MYND INDUSTRIAL VISION - EDGE", annotated_frame)
+
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+        finally:
+            cap.release()
+            cv2.destroyAllWindows()
+            logging.info("Sessão finalizada com sucesso.")
+
+if __name__ == "__main__":
+    engine = MyndIndustrialEngine(model_name="best.pt")
+    if hasattr(engine, 'counter'):
+        engine.rodar(source=0)
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [043/91]: mynd_vision_system\mynd_vision_system\models\best.pt
+  Tamanho: 5.2 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.2 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [044/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxF1_curve.png
+  Tamanho: 106.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [045/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxPR_curve.png
+  Tamanho: 69.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [046/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxP_curve.png
+  Tamanho: 100.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [047/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\BoxR_curve.png
+  Tamanho: 89.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [048/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\args.yaml
+  Tamanho: 1.8 KB  |  Linhas: 111
+──────────────────────────────────────────────────────────────────────
+task: detect
+mode: train
+model: yolo11n.pt
+data: dataset_local.yaml
+epochs: 100
+time: null
+patience: 100
+batch: 16
+imgsz: 640
+save: true
+save_period: -1
+cache: false
+device: cpu
+workers: 8
+project: mynd_finance_v1
+name: detector_caixas_real-2
+exist_ok: false
+pretrained: true
+optimizer: auto
+verbose: true
+seed: 0
+deterministic: true
+single_cls: false
+rect: false
+cos_lr: false
+close_mosaic: 10
+resume: false
+amp: true
+fraction: 1.0
+profile: false
+freeze: null
+multi_scale: 0.0
+compile: false
+overlap_mask: true
+mask_ratio: 4
+dropout: 0.0
+val: true
+split: val
+save_json: false
+conf: null
+iou: 0.7
+max_det: 300
+half: false
+dnn: false
+plots: true
+end2end: null
+source: null
+vid_stride: 1
+stream_buffer: false
+visualize: false
+augment: false
+agnostic_nms: false
+classes: null
+retina_masks: false
+embed: null
+show: false
+save_frames: false
+save_txt: false
+save_conf: false
+save_crop: false
+show_labels: true
+show_conf: true
+show_boxes: true
+line_width: null
+format: torchscript
+keras: false
+optimize: false
+int8: false
+dynamic: false
+simplify: true
+opset: null
+workspace: null
+nms: false
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+box: 7.5
+cls: 0.5
+cls_pw: 0.0
+dfl: 1.5
+pose: 12.0
+kobj: 1.0
+rle: 1.0
+angle: 1.0
+nbs: 64
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+bgr: 0.0
+mosaic: 1.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+copy_paste_mode: flip
+auto_augment: randaugment
+erasing: 0.4
+cfg: null
+tracker: botsort.yaml
+save_dir: C:\Users\perfil\PycharmProjects\PythonProject\NEXT2K26\COMPUTER_VISION\testes\mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [049/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\confusion_matrix.png
+  Tamanho: 90.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [050/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\confusion_matrix_normalized.png
+  Tamanho: 92.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [051/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\labels.jpg
+  Tamanho: 83.2 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [052/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\results.csv
+  Tamanho: 12.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.csv' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [053/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\results.png
+  Tamanho: 303.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [054/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch0.jpg
+  Tamanho: 296.2 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [055/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch1.jpg
+  Tamanho: 308.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [056/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch2.jpg
+  Tamanho: 309.8 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [057/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch90.jpg
+  Tamanho: 261.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [058/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch91.jpg
+  Tamanho: 274.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [059/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\train_batch92.jpg
+  Tamanho: 283.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [060/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\val_batch0_labels.jpg
+  Tamanho: 116.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [061/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\val_batch0_pred.jpg
+  Tamanho: 119.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [062/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\weights\best.pt
+  Tamanho: 5.2 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.2 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [063/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real-2\weights\last.pt
+  Tamanho: 5.2 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.2 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [064/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxF1_curve.png
+  Tamanho: 101.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [065/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxPR_curve.png
+  Tamanho: 69.3 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [066/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxP_curve.png
+  Tamanho: 83.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [067/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\BoxR_curve.png
+  Tamanho: 93.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [068/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\args.yaml
+  Tamanho: 1.8 KB  |  Linhas: 111
+──────────────────────────────────────────────────────────────────────
+task: detect
+mode: train
+model: yolo11n.pt
+data: dataset_local.yaml
+epochs: 100
+time: null
+patience: 100
+batch: 16
+imgsz: 640
+save: true
+save_period: -1
+cache: false
+device: cpu
+workers: 8
+project: mynd_finance_v1
+name: detector_caixas_real
+exist_ok: false
+pretrained: true
+optimizer: auto
+verbose: true
+seed: 0
+deterministic: true
+single_cls: false
+rect: false
+cos_lr: false
+close_mosaic: 10
+resume: false
+amp: true
+fraction: 1.0
+profile: false
+freeze: null
+multi_scale: 0.0
+compile: false
+overlap_mask: true
+mask_ratio: 4
+dropout: 0.0
+val: true
+split: val
+save_json: false
+conf: null
+iou: 0.7
+max_det: 300
+half: false
+dnn: false
+plots: true
+end2end: null
+source: null
+vid_stride: 1
+stream_buffer: false
+visualize: false
+augment: false
+agnostic_nms: false
+classes: null
+retina_masks: false
+embed: null
+show: false
+save_frames: false
+save_txt: false
+save_conf: false
+save_crop: false
+show_labels: true
+show_conf: true
+show_boxes: true
+line_width: null
+format: torchscript
+keras: false
+optimize: false
+int8: false
+dynamic: false
+simplify: true
+opset: null
+workspace: null
+nms: false
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+box: 7.5
+cls: 0.5
+cls_pw: 0.0
+dfl: 1.5
+pose: 12.0
+kobj: 1.0
+rle: 1.0
+angle: 1.0
+nbs: 64
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+bgr: 0.0
+mosaic: 1.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+copy_paste_mode: flip
+auto_augment: randaugment
+erasing: 0.4
+cfg: null
+tracker: botsort.yaml
+save_dir: C:\Users\perfil\PycharmProjects\PythonProject\NEXT2K26\COMPUTER_VISION\testes\mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [069/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\confusion_matrix.png
+  Tamanho: 97.7 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [070/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\confusion_matrix_normalized.png
+  Tamanho: 98.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [071/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\labels.jpg
+  Tamanho: 83.2 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [072/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\results.csv
+  Tamanho: 12.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.csv' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [073/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\results.png
+  Tamanho: 292.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.png' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [074/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch0.jpg
+  Tamanho: 296.2 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [075/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch1.jpg
+  Tamanho: 308.6 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [076/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch2.jpg
+  Tamanho: 309.8 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [077/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch90.jpg
+  Tamanho: 261.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [078/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch91.jpg
+  Tamanho: 274.4 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [079/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\train_batch92.jpg
+  Tamanho: 283.9 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [080/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\val_batch0_labels.jpg
+  Tamanho: 116.0 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [081/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\val_batch0_pred.jpg
+  Tamanho: 115.1 KB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: extensão '.jpg' não é código]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [082/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\weights\best.pt
+  Tamanho: 5.2 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.2 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [083/91]: mynd_vision_system\mynd_vision_system\runs\detect\mynd_finance_v1\detector_caixas_real\weights\last.pt
+  Tamanho: 5.2 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.2 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [084/91]: mynd_vision_system\mynd_vision_system\treinar.py
+  Tamanho: 545 B  |  Linhas: 21
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+from ultralytics import YOLO
+
+def treinar():
+    # Carrega o modelo base
+    model = YOLO("yolo11n.pt") 
+
+    # Treina o modelo com seus dados locais
+    model.train(
+        data="dataset/data.yaml",
+        epochs=50,
+        imgsz=640,
+        device="cpu", # Mude para 0 se tiver placa NVIDIA (GPU)
+        project="mynd_model",
+        name="versao_1"
+    )
+    print("Treino concluído! O melhor modelo estará em: mynd_model/versao_1/weights/best.pt")
+
+if __name__ == "__main__":
+    treinar()
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [085/91]: mynd_vision_system\mynd_vision_system\treinar_local.py
+  Tamanho: 823 B  |  Linhas: 29
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+from ultralytics import YOLO
+import os
+
+def treinar():
+    # Carrega o modelo base (YOLOv11 Nano - ideal para velocidade)
+    model = YOLO("yolo11n.pt") 
+
+    # Caminho para o arquivo YAML que criamos
+    yaml_path = "dataset_local.yaml"
+
+    print(f"[*] Iniciando treinamento com dataset em: {yaml_path}")
+
+    # Treinamento
+    model.train(
+        data=yaml_path,
+        epochs=100,      # Para 0 erros, 100 épocas é o ideal
+        imgsz=640,
+        device="cpu",    # Se tiver GPU NVIDIA, mude para 0
+        project="mynd_finance_v1",
+        name="detector_caixas_real"
+    )
+
+    print("\n[!] TREINO FINALIZADO!")
+    print("[!] Seu modelo 'best.pt' estará em: mynd_finance_v1/detector_caixas_real/weights/best.pt")
+
+if __name__ == "__main__":
+    treinar()
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [086/91]: mynd_vision_system\mynd_vision_system\yolo11n.pt
+  Tamanho: 5.4 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.4 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [087/91]: mynd_vision_system\project-update.py
+  Tamanho: 2.2 KB  |  Linhas: 71
+──────────────────────────────────────────────────────────────────────
+# -*- coding: utf-8 -*-
+import os
+
+
+def update_to_external_dataset():
+    project_dir = "mynd_vision_system"
+    # Caminho onde está o seu dataset baixado (Ajuste o caminho se necessário)
+    # No Windows, o padrão é C:/Users/SEU_USUARIO/Downloads/...
+    user_path = os.path.expanduser("~")
+    dataset_path = os.path.join(user_path, "Downloads", "Find small boxes.v2-continuous-improvement-2026-04-19.yolov11")
+
+    # Normaliza caminhos para evitar erro de barra no Windows
+    dataset_path = dataset_path.replace("\\", "/")
+
+    os.makedirs(f"{project_dir}/models", exist_ok=True)
+
+    # 1. CRIANDO O data.yaml CUSTOMIZADO
+    # Ele aponta diretamente para a pasta de Downloads
+    data_yaml_content = f"""
+path: {dataset_path}
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: Medicamento  # O Roboflow geralmente exporta a partir do 0
+"""
+    with open(f"{project_dir}/dataset_local.yaml", "w", encoding="utf-8") as f:
+        f.write(data_yaml_content)
+
+    # 2. SCRIPT DE TREINAMENTO (treinar_local.py)
+    train_script = r'''# -*- coding: utf-8 -*-
+from ultralytics import YOLO
+import os
+
+def treinar():
+    # Carrega o modelo base (YOLOv11 Nano - ideal para velocidade)
+    model = YOLO("yolo11n.pt") 
+
+    # Caminho para o arquivo YAML que criamos
+    yaml_path = "dataset_local.yaml"
+
+    print(f"[*] Iniciando treinamento com dataset em: {yaml_path}")
+
+    # Treinamento
+    model.train(
+        data=yaml_path,
+        epochs=100,      # Para 0 erros, 100 épocas é o ideal
+        imgsz=640,
+        device="cpu",    # Se tiver GPU NVIDIA, mude para 0
+        project="mynd_finance_v1",
+        name="detector_caixas_real"
+    )
+
+    print("\n[!] TREINO FINALIZADO!")
+    print("[!] Seu modelo 'best.pt' estará em: mynd_finance_v1/detector_caixas_real/weights/best.pt")
+
+if __name__ == "__main__":
+    treinar()
+'''
+
+    with open(f"{project_dir}/treinar_local.py", "w", encoding="utf-8") as f:
+        f.write(train_script)
+
+    print(f"[*] PROJETO CONFIGURADO PARA DATASET EXTERNO.")
+    print(f"[!] Caminho detectado: {dataset_path}")
+    print("[!] Próximo passo: No PyCharm, execute 'treinar_local.py'.")
+
+
+if __name__ == "__main__":
+    update_to_external_dataset()
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [088/91]: mynd_vision_system\requirements.txt
+  Tamanho: 55 B  |  Linhas: 6
+──────────────────────────────────────────────────────────────────────
+ultralytics
+opencv-python
+numpy
+torch
+torchvision
+
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [089/91]: mynd_vision_system\yolo11n-obb.pt
+  Tamanho: 5.5 MB  |  Linhas: N/A
+──────────────────────────────────────────────────────────────────────
+[ignorado: arquivo muito grande (5.5 MB)]
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [090/91]: scan-project.py
+  Tamanho: 8.1 KB  |  Linhas: 218
+──────────────────────────────────────────────────────────────────────
+"""
+scan_project.py
+═══════════════════════════════════════════════════════════════
+Varre todos os arquivos do projeto e gera um relatorio.txt
+com estrutura, arquitetura e conteúdo completo de cada arquivo.
+
+Uso:
+    python scan_project.py                  # varre a pasta atual
+    python scan_project.py C:/caminho/pasta # varre pasta específica
+═══════════════════════════════════════════════════════════════
+"""
+
+import os
+import sys
+from datetime import datetime
+
+# ── Extensões de código que serão lidas ───────────────────────
+CODE_EXTENSIONS = {
+    ".js", ".jsx", ".ts", ".tsx",
+    ".py", ".html", ".css", ".scss", ".sass",
+    ".json", ".env", ".md", ".txt", ".toml",
+    ".yaml", ".yml", ".xml", ".sql", ".php",
+    ".config", ".babelrc", ".eslintrc",
+}
+
+# ── Pastas e arquivos a ignorar ───────────────────────────────
+IGNORE_DIRS = {
+    "node_modules", ".git", "__pycache__", ".expo",
+    ".next", "dist", "build", ".cache", "coverage",
+    "android", "ios", ".idea", ".vscode", "venv",
+    "env", ".env", "__MACOSX",
+}
+
+IGNORE_FILES = {
+    ".DS_Store", "Thumbs.db", "package-lock.json",
+    "yarn.lock", ".gitignore",
+}
+
+MAX_FILE_SIZE_KB = 500  # ignora arquivos maiores que 500KB
+
+
+def tamanho_formatado(bytes_):
+    if bytes_ < 1024:
+        return f"{bytes_} B"
+    elif bytes_ < 1024 ** 2:
+        return f"{bytes_ / 1024:.1f} KB"
+    else:
+        return f"{bytes_ / 1024 ** 2:.1f} MB"
+
+
+def varrer(raiz):
+    """Retorna lista de (caminho_relativo, caminho_absoluto) de todos os arquivos."""
+    arquivos = []
+    for dirpath, dirnames, filenames in os.walk(raiz):
+        # Remove pastas ignoradas in-place para o os.walk não entrar nelas
+        dirnames[:] = [d for d in dirnames if d not in IGNORE_DIRS and not d.startswith(".")]
+
+        for filename in sorted(filenames):
+            if filename in IGNORE_FILES or filename.startswith("."):
+                continue
+            abs_path = os.path.join(dirpath, filename)
+            rel_path = os.path.relpath(abs_path, raiz)
+            arquivos.append((rel_path, abs_path))
+
+    return sorted(arquivos)
+
+
+def arvore(raiz, prefix="", linhas=None):
+    """Gera a árvore de diretórios no estilo do comando tree."""
+    if linhas is None:
+        linhas = []
+    try:
+        entradas = sorted(os.listdir(raiz))
+    except PermissionError:
+        return linhas
+
+    entradas = [e for e in entradas
+                if e not in IGNORE_DIRS
+                and e not in IGNORE_FILES
+                and not e.startswith(".")]
+
+    for i, entrada in enumerate(entradas):
+        caminho = os.path.join(raiz, entrada)
+        conector = "└── " if i == len(entradas) - 1 else "├── "
+        extensao = "  [pasta]" if os.path.isdir(caminho) else ""
+        linhas.append(f"{prefix}{conector}{entrada}{extensao}")
+        if os.path.isdir(caminho) and entrada not in IGNORE_DIRS:
+            novo_prefix = prefix + ("    " if i == len(entradas) - 1 else "│   ")
+            arvore(caminho, novo_prefix, linhas)
+    return linhas
+
+
+def ler_arquivo(abs_path):
+    """Tenta ler o arquivo como texto. Retorna (conteudo, erro)."""
+    tamanho = os.path.getsize(abs_path)
+    if tamanho > MAX_FILE_SIZE_KB * 1024:
+        return None, f"[ignorado: arquivo muito grande ({tamanho_formatado(tamanho)})]"
+
+    ext = os.path.splitext(abs_path)[1].lower()
+    if ext not in CODE_EXTENSIONS:
+        return None, f"[ignorado: extensão '{ext}' não é código]"
+
+    for enc in ("utf-8", "latin-1", "cp1252"):
+        try:
+            with open(abs_path, "r", encoding=enc) as f:
+                return f.read(), None
+        except UnicodeDecodeError:
+            continue
+    return None, "[ignorado: não foi possível decodificar o arquivo]"
+
+
+def gerar_relatorio(raiz, saida="relatorio.txt"):
+    arquivos = varrer(raiz)
+    agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    nome_projeto = os.path.basename(os.path.abspath(raiz))
+
+    # Contagens
+    total_arquivos = len(arquivos)
+    extensoes = {}
+    for rel, _ in arquivos:
+        ext = os.path.splitext(rel)[1].lower() or "(sem extensão)"
+        extensoes[ext] = extensoes.get(ext, 0) + 1
+
+    linhas_relatorio = []
+
+    def w(*args):
+        linhas_relatorio.append(" ".join(str(a) for a in args))
+
+    # ── CABEÇALHO ─────────────────────────────────────────────
+    w("=" * 70)
+    w("  RELATÓRIO DE PROJETO — SCAN COMPLETO")
+    w("=" * 70)
+    w(f"  Projeto   : {nome_projeto}")
+    w(f"  Caminho   : {os.path.abspath(raiz)}")
+    w(f"  Gerado em : {agora}")
+    w(f"  Total de arquivos encontrados: {total_arquivos}")
+    w("=" * 70)
+
+    # ── RESUMO DE EXTENSÕES ───────────────────────────────────
+    w("")
+    w("── TIPOS DE ARQUIVO ENCONTRADOS " + "─" * 38)
+    for ext, count in sorted(extensoes.items(), key=lambda x: -x[1]):
+        w(f"  {ext:<20} {count} arquivo(s)")
+
+    # ── ÁRVORE DE DIRETÓRIOS ──────────────────────────────────
+    w("")
+    w("── ESTRUTURA DE PASTAS E ARQUIVOS " + "─" * 36)
+    w(f"{nome_projeto}/")
+    for linha in arvore(raiz):
+        w(linha)
+
+    # ── ÍNDICE DE ARQUIVOS ────────────────────────────────────
+    w("")
+    w("── ÍNDICE COMPLETO DE ARQUIVOS " + "─" * 39)
+    for i, (rel, abs_path) in enumerate(arquivos, 1):
+        tamanho = tamanho_formatado(os.path.getsize(abs_path))
+        w(f"  [{i:03d}] {rel}  ({tamanho})")
+
+    # ── CONTEÚDO DE CADA ARQUIVO ──────────────────────────────
+    w("")
+    w("═" * 70)
+    w("  CONTEÚDO DOS ARQUIVOS")
+    w("═" * 70)
+
+    lidos = 0
+    ignorados = 0
+
+    for i, (rel, abs_path) in enumerate(arquivos, 1):
+        conteudo, erro = ler_arquivo(abs_path)
+        tamanho = tamanho_formatado(os.path.getsize(abs_path))
+        linhas_codigo = conteudo.count("\n") + 1 if conteudo else 0
+
+        w("")
+        w("─" * 70)
+        w(f"  ARQUIVO [{i:03d}/{total_arquivos}]: {rel}")
+        w(f"  Tamanho: {tamanho}  |  Linhas: {linhas_codigo if conteudo else 'N/A'}")
+        w("─" * 70)
+
+        if erro:
+            w(erro)
+            ignorados += 1
+        else:
+            w(conteudo)
+            lidos += 1
+
+    # ── RODAPÉ ────────────────────────────────────────────────
+    w("")
+    w("═" * 70)
+    w("  FIM DO RELATÓRIO")
+    w(f"  Arquivos lidos    : {lidos}")
+    w(f"  Arquivos ignorados: {ignorados}")
+    w(f"  Total             : {total_arquivos}")
+    w("═" * 70)
+
+    # ── SALVAR ────────────────────────────────────────────────
+    caminho_saida = os.path.join(os.path.abspath(raiz), saida)
+    with open(caminho_saida, "w", encoding="utf-8") as f:
+        f.write("\n".join(linhas_relatorio))
+
+    print(f"\n{'=' * 55}")
+    print(f"  Relatório gerado com sucesso!")
+    print(f"{'=' * 55}")
+    print(f"  Arquivo : {caminho_saida}")
+    print(f"  Lidos   : {lidos} arquivos")
+    print(f"  Ignorados: {ignorados} arquivos")
+    print(f"  Total   : {total_arquivos} arquivos")
+    print(f"{'=' * 55}\n")
+    return caminho_saida
+
+
+if __name__ == "__main__":
+    pasta = sys.argv[1] if len(sys.argv) > 1 else "."
+
+    if not os.path.isdir(pasta):
+        print(f"Erro: '{pasta}' não é uma pasta válida.")
+        sys.exit(1)
+
+    gerar_relatorio(pasta)
+
+──────────────────────────────────────────────────────────────────────
+  ARQUIVO [091/91]: setup_project.py
+  Tamanho: 3.8 KB  |  Linhas: 127
+──────────────────────────────────────────────────────────────────────
+import os
+
+
+def create_project():
+    # 1. Estrutura de Diretórios
+    project_name = "mynd_vision_system"
+    folders = [
+        project_name,
+        f"{project_name}/models",
+        f"{project_name}/logs",
+        f"{project_name}/utils"
+    ]
+
+    print(f"[*] Iniciando criação do projeto: {project_name}")
+    for folder in folders:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+            print(f"[+] Pasta criada: {folder}")
+
+    # 2. Arquivo de Requisitos
+    requirements = """ultralytics
+opencv-python
+numpy
+torch
+torchvision
+"""
+    with open(f"{project_name}/requirements.txt", "w") as f:
+        f.write(requirements)
+    print("[+] Arquivo requirements.txt gerado.")
+
+    # 3. Código Principal (main.py)
+    main_code = """import cv2
+import os
+import logging
+from datetime import datetime
+from ultralytics import solutions
+
+# Configuração de Logs Profissionais
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+log_file = f"logs/contagem_{datetime.now().strftime('%Y%m%d')}.log"
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[logging.FileHandler(log_file), logging.StreamHandler()]
+)
+
+class MyndVision:
+    def __init__(self, model_name="yolo11n-obb.pt", source=0):
+        self.source = source
+        self.model_path = model_name
+
+        # Definição da ROI (Região de Interesse) - Quadrante de Contagem
+        # Formato: [(x1, y1), (x2, y2), (x3, y3), (x4, y4)]
+        self.region_points = [(100, 600), (1180, 600), (1180, 100), (100, 100)]
+
+        logging.info(f"Carregando modelo {model_name}...")
+        self.counter = solutions.ObjectCounter(
+            show=True,
+            region=self.region_points,
+            model=self.model_path,
+            line_width=2,
+            conf=0.6,
+            persist=True
+        )
+        self.cap = None
+
+    def executar(self):
+        self.cap = cv2.VideoCapture(self.source)
+        if not self.cap.isOpened():
+            logging.error("Falha ao abrir fonte de vídeo.")
+            return
+
+        print("\\n--- MONITORAMENTO ATIVO: PRESSIONE 'Q' PARA PARAR ---")
+
+        try:
+            while self.cap.isOpened():
+                success, frame = self.cap.read()
+                if not success:
+                    break
+
+                # Processamento central do Ultralytics Solutions
+                annotated_frame = self.counter.count(frame)
+
+                # Feedback de contagem no console para auditoria
+                # O atributo in_count é o total acumulado de itens que entraram na zona
+                print(f"\\rItens Detectados: {self.counter.in_count}", end="")
+
+                cv2.imshow("Mynd Vision System - Zero Divergencia", annotated_frame)
+
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+        finally:
+            self.cap.release()
+            cv2.destroyAllWindows()
+            logging.info(f"Processo finalizado. Total final: {self.counter.in_count}")
+
+if __name__ == "__main__":
+    app = MyndVision()
+    app.executar()
+"""
+    with open(f"{project_name}/main.py", "w") as f:
+        f.write(main_code)
+    print("[+] Arquivo main.py gerado com lógica OBB.")
+
+    # 4. Arquivo de README/Instruções
+    readme = f"""# Mynd Vision System - Guia Rápido
+
+1. Instale as dependências:
+   pip install -r requirements.txt
+
+2. Execute o sistema:
+   python main.py
+
+3. Calibração:
+   Edite a variável `self.region_points` no `main.py` para alinhar com sua esteira/bancada.
+"""
+    with open(f"{project_name}/README.md", "w") as f:
+        f.write(readme)
+    print("[+] Arquivo README.md gerado.")
+
+    print(f"\\n[!] PROJETO PRONTO. Entre na pasta '{project_name}' e siga o README.")
+
+
+if __name__ == "__main__":
+    create_project()
+
+══════════════════════════════════════════════════════════════════════
+  FIM DO RELATÓRIO
+  Arquivos lidos    : 32
+  Arquivos ignorados: 59
+  Total             : 91
+══════════════════════════════════════════════════════════════════════
