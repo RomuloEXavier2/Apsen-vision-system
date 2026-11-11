@@ -1,10 +1,7 @@
-# Mynd Vision System - Guia Rápido
+# Mynd Vision System â€” Guia RÃ¡pido
 
-1. Instale as dependências:
-   pip install -r requirements.txt
+1. Instale as dependÃªncias: `pip install -r requirements.txt`
+2. Entre em `mynd_vision_system/` e calibre a Ã¡rea de contagem: `python calibrar_roi.py`
+3. Rode o sistema: `python main.py`
 
-2. Execute o sistema:
-   python main.py
-
-3. Calibração:
-   Edite a variável `self.region_points` no `main.py` para alinhar com sua esteira/bancada.
+DocumentaÃ§Ã£o completa no [README principal](../README.md).
