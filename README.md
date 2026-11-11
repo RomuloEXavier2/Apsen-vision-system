@@ -1,315 +1,147 @@
+<div align="center">
+
 # Apsen Vision System
 
-**Apsen Vision System** é um sistema de contagem industrial de caixas de medicamentos por visão computacional, construído com YOLOv11 e a SDK nativa da Ultralytics.  
-Detecta e conta objetos em tempo real dentro de uma ROI (Região de Interesse) configurável, com logging automático por sessão e suporte a modelo próprio treinado via Roboflow.
+**Contagem de caixas de medicamento por visão computacional, a terceira camada de validação da VALORY**
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
-[![Ultralytics](https://img.shields.io/badge/YOLOv11-Ultralytics-orange)](https://docs.ultralytics.com)
-[![Roboflow](https://img.shields.io/badge/Dataset-Roboflow-purple)](https://roboflow.com)
+1º lugar no FIAP NEXT 2026, no Challenge Pharma Robotics proposto pela **Apsen Farmacêutica** em parceria com a **Softtek**
 
-## Por que Apsen Vision System?
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![YOLOv11](https://img.shields.io/badge/YOLOv11n-Ultralytics-111F68)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-5C3EE8?logo=opencv&logoColor=white)
+![Roboflow](https://img.shields.io/badge/Dataset-Roboflow-6706CE)
+![Edge](https://img.shields.io/badge/inferência-100%25%20local-success)
 
-- **Modelo próprio** — treinado em imagens reais das caixas com dataset "Find Small Boxes" via Roboflow
-- **ROI configurável** — define a zona de contagem via 4 pontos; objetos fora da área são ignorados
-- **Contagem bidirecional** — rastreia entrada (`in_count`) e saída (`out_count`) separadamente
-- **Logging por dia** — arquivo `.log` gerado automaticamente com timestamp de cada sessão
-- **Zero dependência de nuvem em produção** — inferência 100% local após download do modelo
-- **Pipeline de treino incluso** — scripts prontos para re-treinar com novos dados
+<img src="docs/val_batch0_pred.jpg" width="70%">
+
+</div>
 
 ---
 
-## Features
+## O papel deste módulo
 
-### Detecção & Contagem
+A VALORY é uma célula robótica com CNC cartesiana e 8 dispensers que separa medicamentos com **zero divergência**. Toda operação é confirmada por três fontes independentes:
 
-- Inferência com **YOLOv11n** — modelo nano, rápido em CPU
-- `solutions.ObjectCounter` nativo da Ultralytics com ByteTrack integrado (BoT-SORT)
-- Contagem por cruzamento de ROI poligonal (não por frame) — elimina contagens duplicadas
-- Confiança mínima configurável (padrão: `0.6`) para suprimir detecções fantasmas
-- Suporte ao modelo OBB (`yolo11n-obb.pt`) para detecção com caixas orientadas
+```mermaid
+flowchart LR
+    CNC["CNC<br/>ciclos executados"] --> CMP{"Comparação"}
+    BAL["Balança<br/>peso ÷ peso unitário"] --> CMP
+    VIS["Apsen Vision System<br/>caixas contadas na ROI"] --> CMP
+    CMP -- "3 fontes iguais" --> OK["Operação liberada"]
+    CMP -- "divergência" --> STOP["Operação bloqueada<br/>até intervenção do operador"]
+```
 
-### Dataset & Treinamento
+O **Apsen Vision System** é a fonte visual: uma câmera sobre a bancada detecta cada caixa com um modelo YOLOv11 treinado nas embalagens reais e conta as que entram na **região de interesse (ROI)**.
 
-- Dataset "Find Small Boxes" — anotado no Roboflow, exportado em formato YOLOv11
-- 2 classes: `Medicamento` (classe 0) e variante de orientação (classe 1)
-- 17 imagens de treino com labels YOLO normalizados
-- 2 experimentos completos de treinamento: `detector_caixas_real` e `detector_caixas_real-2`
-- 100 épocas, `imgsz=640`, otimizador automático, AMP ativado
-- Scripts separados para treino via Roboflow (`treinar.py`) e local (`treinar_local.py`)
+## Destaques
 
-### Coleta de Dados
-
-- `coletar_dados.py` — captura frames da câmera com tecla `S` e salva com UUID único
-- Imagens salvas diretamente em `dataset/train/images/` no formato correto para re-treino
-- Ideal para ampliar o dataset com novas variações de iluminação ou posicionamento
-
-### Logging
-
-- Log diário em `logs/contagem_YYYYMMDD.log`
-- Registra: início do modelo, erros de câmera, contagem final da sessão
-- Output simultâneo no terminal e no arquivo
+- **Modelo próprio:** YOLOv11n ajustado com fine-tuning em fotos reais das caixas da bancada, anotadas no Roboflow
+- **Contagem por cruzamento de ROI, não por frame:** o rastreador mantém o ID de cada caixa, então ela é contada uma vez só
+- **ROI calibrável com o mouse:** `calibrar_roi.py` salva os 4 cantos em `roi.json`, sem editar código
+- **Inferência 100% local:** roda numa mini PC com CPU, sem depender de nuvem na produção
+- **Log por sessão:** `logs/contagem_AAAAMMDD.log` com início, erros e contagem final
+- **Pipeline de dados completo:** coleta de imagens, treino local ou via Roboflow e troca do modelo
 
 ---
 
-## Quick Start
+## Resultados do treino
 
-### 1. Instalar dependências
+| Experimento | Épocas | Precisão | Recall | mAP@50 | mAP@50-95 |
+|---|---|---|---|---|---|
+| `detector_caixas_real` | 100 | 1,000 | 0,981 | 0,995 | **0,896** |
+| `detector_caixas_real-2` | 100 | 1,000 | 0,987 | 0,995 | 0,847 |
 
-```bash
-pip install -r requirements.txt
-```
+<img src="docs/results.png" width="70%">
 
-`requirements.txt` atual:
+> **Leitura correta:** as métricas foram medidas na validação de um dataset pequeno, com poucas dezenas de imagens da mesma bancada e iluminação. Elas mostram que o modelo aprendeu bem aquele cenário, mas não garantem desempenho em outra câmera ou outra luz. Ampliar o dataset é o primeiro item do roadmap.
 
-```
-ultralytics
-opencv-python
-numpy
-torch
-torchvision
-```
+---
 
-### 2. Rodar com modelo OBB (raiz do projeto)
+## Como rodar
 
 ```bash
-cd mynd_vision_system
-python main.py
-```
-
-Usa `yolo11n-obb.pt` por padrão. Pressione `Q` para encerrar.
-
-### 3. Rodar com modelo treinado (subpasta)
-
-```bash
+pip install -r mynd_vision_system/requirements.txt
 cd mynd_vision_system/mynd_vision_system
-python main.py
+
+python calibrar_roi.py              # 1. clique nos 4 cantos da área → roi.json
+python main.py                      # 2. câmera 0, modelo models/best.pt, conf 0.6
+python main.py --source video.mp4   #    ou um vídeo gravado
+python main.py --source 1 --conf 0.5
 ```
 
-Usa `models/best.pt` — o modelo treinado nas caixas reais.
+Pressione `Q` para encerrar. A contagem aparece na tela (`MYND BOX COUNT`) e vai para o log.
 
----
-
-## Calibração da ROI
-
-A Região de Interesse define a zona onde os objetos são contados. Edite `region_points` no `main.py`:
-
-```python
-# Formato: [(x1, y1), (x2, y2), (x3, y3), (x4, y4)]
-# Coordenadas em pixels para resolução 1280x720
-self.region_points = [(100, 600), (1180, 600), (1180, 100), (100, 100)]
-```
-
-Para alinhar com sua bancada/esteira:
-1. Rode o sistema e observe o frame exibido
-2. Identifique as coordenadas dos cantos da área de contagem
-3. Atualize os 4 pontos e reinicie
-
-**Dica:** Use `cv2.imshow` com `cv2.setMouseCallback` para clicar e capturar coordenadas precisas.
-
----
-
-## Treinamento
-
-### Opção 1 — Dataset local (recomendado)
-
-Configure o caminho do dataset no `dataset_local.yaml`:
-
-```yaml
-path: C:/Users/SEU_USUARIO/Downloads/Find small boxes.v2-...yolov11
-train: train/images
-val: valid/images
-test: test/images
-
-names:
-  0: Medicamento
-```
-
-Execute:
-
-```bash
-python treinar_local.py
-```
-
-O modelo treinado ficará em:
-
-```
-mynd_finance_v1/detector_caixas_real/weights/best.pt
-```
-
-Copie para `models/best.pt` antes de rodar o sistema.
-
-### Opção 2 — Download via Roboflow API
-
-```bash
-python download_model.py
-```
-
-Requer API Key do Roboflow configurada no script:
-
-```python
-rf = Roboflow(api_key="SUA_API_KEY_AQUI")
-project = rf.workspace("mynds-workspace").project("find-small-boxes-pyutr")
-```
-
-### Parâmetros de treinamento usados
-
-| Parâmetro | Valor |
-|---|---|
-| Base model | `yolo11n.pt` |
-| Epochs | 100 |
-| Image size | 640 |
-| Batch | 16 |
-| Device | CPU (mude para `0` com GPU NVIDIA) |
-| Tracker | BoT-SORT (`botsort.yaml`) |
-| Optimizer | Auto |
-| IoU threshold | 0.7 |
-| AMP | Ativado |
-
-### Resultados de treinamento
-
-Artefatos gerados automaticamente em `runs/detect/mynd_finance_v1/`:
-
-| Arquivo | Descrição |
-|---|---|
-| `weights/best.pt` | Melhor checkpoint do treino |
-| `weights/last.pt` | Último checkpoint |
-| `results.csv` | Métricas por época |
-| `results.png` | Gráficos de loss, precisão e recall |
-| `confusion_matrix.png` | Matriz de confusão |
-| `BoxF1_curve.png` | Curva F1 por confiança |
-| `BoxPR_curve.png` | Curva precisão-recall |
-| `val_batch0_pred.jpg` | Predições no batch de validação |
-
----
-
-## Coleta de Novos Dados
-
-Para expandir o dataset com novas imagens:
-
-```bash
-python coletar_dados.py
-```
+### Calibração da ROI
 
 | Tecla | Ação |
 |---|---|
-| `S` | Salva o frame atual com nome UUID |
-| `Q` | Encerra a coleta |
+| clique | marca um canto (4 no total) |
+| `R` | recomeça |
+| `S` | salva `roi.json` |
+| `Q` | sai sem salvar |
 
-Imagens são salvas em `dataset/train/images/`. Depois anote no Roboflow e re-treine.
+Sem `roi.json`, o sistema usa a ROI padrão para 1280×720. Refaça a calibração sempre que mudar a câmera, a altura ou a resolução.
 
 ---
 
-## Configuração do Projeto Externo (Utilitário)
-
-Para reconfigurar o projeto apontando para um novo dataset baixado:
+## Treinar com novos dados
 
 ```bash
-python project-update.py
+python coletar_dados.py     # S salva o frame, Q sai → dataset/train/images/
+# anote as imagens no Roboflow e exporte em formato YOLOv11
+python treinar_local.py     # 100 épocas, imgsz 640, base yolo11n.pt
+# copie runs/.../weights/best.pt para models/best.pt
 ```
 
-O script detecta automaticamente o caminho `~/Downloads/Find small boxes.v2-...` e regera o `dataset_local.yaml` e o `treinar_local.py`.
-
----
-
-## Estrutura do Projeto
-
-```
-mynd_vision_system/
-├── main.py                        # Ponto de entrada com MyndVision (modelo OBB)
-├── requirements.txt
-├── yolo11n-obb.pt                 # Modelo base OBB pré-treinado
-├── logs/
-│   └── contagem_YYYYMMDD.log      # Log diário da sessão
-│
-├── mynd_vision_system/            # Módulo principal com modelo customizado
-│   ├── main.py                    # MyndIndustrialEngine (modelo best.pt)
-│   ├── treinar.py                 # Treino via Roboflow (50 épocas)
-│   ├── treinar_local.py           # Treino com dataset local (100 épocas)
-│   ├── coletar_dados.py           # Captura de imagens para dataset
-│   ├── download_model.py          # Download do dataset via API Roboflow
-│   ├── dataset_local.yaml         # Config do dataset para treino local
-│   ├── yolo11n.pt                 # Modelo base para fine-tuning
-│   │
-│   ├── models/
-│   │   └── best.pt                # Modelo treinado (5.2 MB)
-│   │
-│   ├── dataset/
-│   │   ├── data.yaml              # Config do dataset interno
-│   │   └── train/
-│   │       ├── images/            # 17 imagens de treino
-│   │       └── labels/            # Labels YOLO normalizados
-│   │
-│   └── runs/detect/mynd_finance_v1/
-│       ├── detector_caixas_real/  # Experimento 1
-│       └── detector_caixas_real-2/ # Experimento 2 (melhor)
-│           └── weights/
-│               ├── best.pt
-│               └── last.pt
-│
-├── scan-project.py                # Varre o projeto e gera relatorio.txt
-└── setup_project.py               # Gera a estrutura inicial do projeto
-```
-
----
-
-## Classes do Modelo
-
-| ID | Nome | Descrição |
-|---|---|---|
-| `0` | `Medicamento` | Caixa de medicamento em posição padrão |
-| `1` | *(variante)* | Caixa em orientação alternativa (dataset WhatsApp) |
-
----
-
-## Contexto — Projeto APSEN
-
-Este módulo faz parte do **Projeto APSEN**: célula automatizada com CNC cartesiana para separação de amostras farmacêuticas com zero divergência.
-
-O Mynd Vision System atua como a **terceira camada de validação** na redundância tripla:
-
-```
-CNC (ciclos executados)  ==  Balança (peso / unitário)  ==  Visão (in_count)
-```
-
-Divergência entre as três fontes bloqueia a operação até intervenção do operador.
-
----
-
-## Riscos Conhecidos
-
-| Risco | Mitigação |
+| Parâmetro | Valor |
 |---|---|
-| Dataset pequeno (17 imagens) | Coletar mais amostras com `coletar_dados.py` e re-treinar |
-| Treino apenas em CPU | Mude `device="cpu"` para `device=0` se tiver GPU NVIDIA |
-| ROI em pixels fixos | Recalibrar `region_points` ao mudar câmera ou resolução |
-| `in_count` vs `in_counts` — API instável entre versões | Código usa `getattr` com fallback para compatibilidade |
-| Confiança 0.4 no `main.py` raiz pode gerar falsos positivos | Use 0.6 do `MyndIndustrialEngine` em produção |
+| Modelo base | `yolo11n.pt` (nano, ideal para CPU) |
+| Épocas | 100 |
+| Tamanho da imagem | 640 |
+| Rastreador | BoT-SORT (padrão Ultralytics) |
+| Confiança em produção | 0,6 |
+| Dispositivo | CPU (use `device=0` com GPU NVIDIA) |
+
+`download_model.py` baixa o dataset pela API do Roboflow. Coloque a sua chave numa variável de ambiente, nunca no código.
 
 ---
 
-## Stats
+## Estrutura
 
-### Dataset de treinamento
+```
+Apsen-vision-system/
+├── README.md
+├── docs/                              # imagens de métricas usadas neste README
+└── mynd_vision_system/
+    ├── requirements.txt
+    ├── main.py                        # protótipo com modelo OBB genérico
+    └── mynd_vision_system/            # versão de produção
+        ├── main.py                    # MyndIndustrialEngine (CLI, roi.json, log)
+        ├── calibrar_roi.py            # calibração da ROI com o mouse
+        ├── coletar_dados.py           # captura de imagens para o dataset
+        ├── treinar_local.py           # treino com dataset local
+        ├── treinar.py                 # treino via Roboflow
+        ├── download_model.py          # download do dataset (Roboflow API)
+        ├── models/best.pt             # modelo treinado (5,2 MB)
+        └── dataset/                   # imagens e labels YOLO
+```
 
-| Item | Quantidade |
-|---|---|
-| Imagens de treino | 17 |
-| Labels anotados | ~30 instâncias (múltiplas por imagem) |
-| Classes | 2 (`Medicamento`, variante) |
-| Formato | YOLO normalizado (`.txt` por imagem) |
-| Fonte | Roboflow + fotos via WhatsApp (17/04/2026) |
+## Roadmap
 
-### Codebase
+- [ ] Ampliar o dataset (meta: 300+ imagens, variando luz, ângulo e posição) e separar treino, validação e teste
+- [ ] Unificar as classes: `data.yaml` declara 1 classe, mas os labels usam 2
+- [ ] Publicar a contagem via HTTP para o computador central (porta 8202 da arquitetura VALORY)
+- [ ] Exportar para ONNX/OpenVINO e medir FPS na mini PC
+- [ ] Integrar a visão da mesa (OpenCV clássico) com a dos dispensers
 
-| Arquivo | Linhas | Responsabilidade |
-|---|---|---|
-| `main.py` (raiz) | 90 | MyndVision com modelo OBB |
-| `mynd_vision_system/main.py` | 69 | MyndIndustrialEngine com best.pt |
-| `treinar_local.py` | 29 | Pipeline de treino local |
-| `treinar.py` | 21 | Pipeline de treino via Roboflow |
-| `coletar_dados.py` | 26 | Captura de frames para dataset |
-| `download_model.py` | 20 | Download do dataset via API |
-| `project-update.py` | 71 | Reconfiguração para dataset externo |
-| `setup_project.py` | 127 | Geração da estrutura do projeto |
-| `scan-project.py` | 218 | Scanner de projeto → relatorio.txt |
-| **Total** | **~671** | |
+## Projetos relacionados
+
+- [Valory-Electronics](https://github.com/RomuloEXavier2/Valory-Electronics): esquemáticos e PCBs da célula
+- [Apsen-App](https://github.com/RomuloEXavier2/Apsen-App): aplicação de gestão logística (WMS)
+
+## Créditos
+
+**Equipe Valory:** Rômulo Estevam Xavier, Gustavo Paraszczuk de Azevedo Marques, Jennifer de Souza, Fernando Bertolucci, João Antonio Domingues Gonçalves e Leonardo Ken Stefano
+**Instituição:** FIAP · **Desafio:** Apsen Farmacêutica + Softtek
+
+Desenvolvido por [Rômulo Estevam Xavier](https://www.linkedin.com/in/romulo-estevam-xavier/) · MYND (Make Your New Dreams)

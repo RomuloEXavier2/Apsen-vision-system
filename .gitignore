@@ -1,15 +1,22 @@
-echo # Python > .gitignore
-echo __pycache__/ >> .gitignore
-echo *.py[cod] >> .gitignore
-echo venv/ >> .gitignore
-echo .env >> .gitignore
-echo # Modelos >> .gitignore
-echo *.pt >> .gitignore
-echo # Runs YOLO >> .gitignore
-echo runs/ >> .gitignore
-echo # Logs >> .gitignore
-echo logs/ >> .gitignore
-echo # Sistema >> .gitignore
-echo .DS_Store >> .gitignore
-echo Thumbs.db >> .gitignore
-echo .idea/ >> .gitignore
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.env
+
+# Modelos: ignora pesos, exceto o modelo de produção
+*.pt
+!mynd_vision_system/mynd_vision_system/models/best.pt
+
+# Artefatos de treino YOLO (mantenha as imagens de métricas em docs/)
+runs/
+
+# Logs e calibração local
+logs/
+roi.json
+
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.idea/
